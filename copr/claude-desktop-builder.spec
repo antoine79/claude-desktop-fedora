@@ -1,5 +1,5 @@
 Name:           claude-desktop-builder
-Version:        1.0.2
+Version:        1.0.3
 Release:        1%{?dist}
 Summary:        Builds and updates Claude Desktop for Fedora from the official upstream build
 
@@ -84,6 +84,11 @@ fi
 %dir %{_sharedstatedir}/%{name}
 
 %changelog
+* Thu Oct 22 2026 Anıl Sürmeli <126188687+anilsrml@users.noreply.github.com> - 1.0.3-1
+- Run build-official.sh under C.UTF-8 so its checks pass in every locale;
+  locales with Turkish-style i/I failed the Filename check and legacy CJK
+  encodings crashed sort -V
+
 * Fri Oct 16 2026 arcanistzed <arcanistzed@gmail.com> - 1.0.2-1
 - Resolve and verify builds through Anthropic's signed apt repository
 - Package the GNOME search provider, MIME types and ccd launcher link

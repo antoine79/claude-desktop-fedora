@@ -1,5 +1,15 @@
 # Changelog
 
+## v9.3 (2026-10-22)
+
+**Your locale no longer matters.** Reported and fixed by [@anilsrml](https://github.com/anilsrml) in [#7](https://github.com/dewzor/claude-desktop-fedora/issues/7) and [#8](https://github.com/dewzor/claude-desktop-fedora/pull/8).
+
+- On Turkish systems `build-official.sh` stopped with "unexpected Filename in the signed index". Bash matches ranges like `[A-Za-z]` by the locale's sort order, and Turkish puts `i` and `I` outside them. Azerbaijani, Crimean Tatar, Kurdish (Turkey) and Tatar failed the same way.
+- In legacy CJK encodings such as EUC-JP, EUC-KR, GB2312 and Big5, `sort` crashed instead.
+- The script now runs under `C.UTF-8` whatever your locale is. On Fedora 44 we ran the signed index check under all 891 locales glibc ships: 39 failed before, none fail now. A full build and install under Turkish works too. Messages from the tools it runs, such as `rpmbuild`, are now in English.
+- The `claude-desktop-update` timer failed on these systems too, because systemd passes the system locale to the service. It runs `build-official.sh`, so the same fix covers it.
+- `claude-desktop-builder` 1.0.3 on COPR.
+
 ## v9.2 (2026-10-21)
 
 **Verified downloads, full desktop integration.** Contributed by [@arcanistzed](https://github.com/arcanistzed) in [#6](https://github.com/dewzor/claude-desktop-fedora/pull/6).

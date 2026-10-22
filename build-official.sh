@@ -19,6 +19,14 @@
 # Runs entirely as your own user; root is only needed to install the result.
 #
 set -euo pipefail
+# Pin the locale so every check gives the same result on every system.
+# Bracket ranges such as [A-Za-z] follow the locale's collation: in locales
+# with Turkish-style i and I (tr_TR, az_AZ, crh_UA, ku_TR, tt_RU) they leave
+# out i and I, so the Filename check below rejected every valid path
+# ("pool/main/..."). With legacy CJK encodings (ja_JP.eucJP, ko_KR.eucKR,
+# zh_CN.gb2312, zh_TW.big5) sort -V aborted on Fedora 44. Of the 891 locales
+# Fedora 44 ships, 39 failed the index check before this.
+export LC_ALL=C.UTF-8
 
 ARCH_DEB="amd64"
 ARCH_RPM="x86_64"
