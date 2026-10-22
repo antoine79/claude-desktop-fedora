@@ -45,10 +45,6 @@ Removing the package leaves Claude Desktop alone:
 sudo dnf remove claude-desktop-builder
 ```
 
-## Flatpak
-
-There is a Flatpak too, for any distro. The manifest lives in its own repo, https://github.com/dewzor/ClaudeDesktop, and is submitted to Flathub (https://github.com/flathub/flathub/pull/9971). Until Flathub accepts it, build it yourself with the commands in that repo's README. Inside the Flatpak, Claude Code runs on the host through the Flatpak portal, so it sees your real git, node and python. The manifest started from gordonmessmer's com.anthropic.Claude and switched to extra-data so it can be hosted on Flathub.
-
 ## What works on Fedora 44
 
 | Feature | Status |
@@ -224,7 +220,7 @@ sudo dnf remove claude-desktop
 - [@itsnitinr](https://github.com/itsnitinr): multithreaded zstd payload compression ([#5](https://github.com/dewzor/claude-desktop-fedora/pull/5)).
 - [@sharpandpearl](https://github.com/sharpandpearl): `build-official.sh` and the analysis of why the Windows repack stopped working ([#4](https://github.com/dewzor/claude-desktop-fedora/pull/4)).
 - [@randy-johnson](https://github.com/randy-johnson): `titleBarOverlay` regex fix on the legacy script ([#3](https://github.com/dewzor/claude-desktop-fedora/pull/3)).
-- [@gordonmessmer](https://github.com/gordonmessmer): the [com.anthropic.Claude](https://github.com/gordonmessmer/com.anthropic.Claude) Flatpak manifest that the one in `flatpak/` is based on.
+- [@gordonmessmer](https://github.com/gordonmessmer): the [com.anthropic.Claude](https://github.com/gordonmessmer/com.anthropic.Claude) Flatpak manifest that our earlier Flatpak was based on.
 
 ## License
 
