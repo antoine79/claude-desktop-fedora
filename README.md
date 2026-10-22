@@ -219,6 +219,7 @@ sudo dnf remove claude-desktop
 
 - [@bsneed](https://github.com/bsneed) (Brandon Sneed): the original project this one grew out of.
 - [@boujuan](https://github.com/boujuan) (Juan Boullosa): the Fedora 43 title bar fixes and automatic download of the latest version in the legacy script (v6 to v8).
+- [@anilsrml](https://github.com/anilsrml) (Anıl Sürmeli): found and fixed the locale bug that broke builds on Turkish and other systems ([#8](https://github.com/dewzor/claude-desktop-fedora/pull/8)).
 - [@arcanistzed](https://github.com/arcanistzed): download verification against Anthropic's signed apt repo, GNOME search and file associations ([#6](https://github.com/dewzor/claude-desktop-fedora/pull/6)).
 - [@itsnitinr](https://github.com/itsnitinr): multithreaded zstd payload compression ([#5](https://github.com/dewzor/claude-desktop-fedora/pull/5)).
 - [@sharpandpearl](https://github.com/sharpandpearl): `build-official.sh` and the analysis of why the Windows repack stopped working ([#4](https://github.com/dewzor/claude-desktop-fedora/pull/4)).
